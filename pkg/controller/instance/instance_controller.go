@@ -168,8 +168,8 @@ func isForPipePod(e event.DeleteEvent) bool {
 // Automatically generate RBAC rules to allow the Controller to read and write Deployments
 func (r *Reconciler) Reconcile(request ctrl.Request) (ctrl.Result, error) {
 	// ---------- 1. Query the current state ----------
-
 	log.Printf("InstanceController: Received Reconcile request for instance %s", request.NamespacedName)
+	log.Printf("InstanceController: HELLO WORLD")
 	instance, err := r.getInstance(request)
 	if err != nil {
 		if apierrors.IsNotFound(err) { // not retrying if instance not found, probably someone manually removed it?
